@@ -1,0 +1,2 @@
+defmodule ElixirSlinm do
+end
