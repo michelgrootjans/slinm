@@ -1,4 +1,5 @@
 elixir
-mkdir elixir
+------
+mix new elixir
 cd elixir
-mix new selainimi
+mix test
