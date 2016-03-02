@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace MyFirstDnxUnitTest
+namespace BowlingGame
 {
   public class BowlingTest{
     BowlingGame game;
@@ -25,8 +25,8 @@ namespace MyFirstDnxUnitTest
     [Fact]
     public void GutterGame_Scores0()
     {
-      for(int i=0; i<20; i++)
-        game.Roll(0);
+      for(int i=0; i<10; i++)
+        game.Roll(0, 0);
       Assert.Equal(0, game.Score);
     }
 
@@ -40,8 +40,7 @@ namespace MyFirstDnxUnitTest
     [Fact]
     public void Rolling1_twice_Scores2()
     {
-      game.Roll(1);
-      game.Roll(1);
+      game.Roll(1, 1);
       Assert.Equal(2, game.Score);
     }
 
@@ -50,14 +49,6 @@ namespace MyFirstDnxUnitTest
     {
       game.Roll(2);
       Assert.Equal(2, game.Score);
-    }
-  }
-
-  public class BowlingGame {
-    public int Score { get; private set; }
-
-    public void Roll(int pins) {
-      Score += pins;
     }
   }
 }
