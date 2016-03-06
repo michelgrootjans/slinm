@@ -1,21 +1,21 @@
 defmodule Game do
-	def score([]), do: 0
+	def score(rolls), do: score(1, rolls)
 
-	def score([[10] | other_frames]) do 
-		10 + next_two_rolls_of(other_frames) + score(other_frames)
+	defp score(_frame, []), do: 0
+
+	#stop calculating after last frame
+	defp score(frame, _) when frame > 10, do: 0
+
+	#strike
+	defp score(frame, [10, y, z | rolls]) do
+		10 + y + z + score(frame + 1, [ y, z | rolls])
 	end
 
-	def score([[roll_1, roll_2] | other_frames]) when roll_1 + roll_2 == 10 do 
-		10 + next_roll_of(other_frames) + score(other_frames)
+	#spare
+	defp score(frame, [x, y, z | rolls]) when x + y == 10 do
+		10 + z + score(frame + 1, [z | rolls])
 	end
 
-	def score([[roll_1, roll_2] | other_frames]) do
-		roll_1 + roll_2 + score(other_frames)
-	end
-
-	defp next_roll_of([[roll | _ ] | _] ), do: roll
-
-  defp next_two_rolls_of([frame | _ ]) do
-      score([frame])
-  end
+	defp score(_frame, [x]), do: x
+	defp score(_frame, [x, y | rolls]), do: x + y + score(rolls)
 end

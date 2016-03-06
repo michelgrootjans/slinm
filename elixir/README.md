@@ -1,5 +1,9 @@
 # Elixir
 
+> mix test.watch
+
+see http://www.slideshare.net/gabriele.lana/the-magic-of-elixir
+
 **TODO: Add description**
 
 ## Installation
