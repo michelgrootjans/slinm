@@ -8414,9 +8414,9 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FSharp.Dnx >= 1.0.0-*",
       "xunit >= 2.1.0",
-      "xunit.runner.dnx >= 2.1.0-*"
+      "xunit.runner.dnx >= 2.1.0-*",
+      "FSharp.Dnx >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []

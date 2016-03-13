@@ -50,5 +50,43 @@ namespace BowlingGame
       game.Roll(2);
       Assert.Equal(2, game.Score);
     }
+
+    [Fact]
+    public void Rolling_spare_3_Scores16()
+    {
+      game.Roll(4);
+      game.Roll(6);
+      game.Roll(3);
+      Assert.Equal((4+6+3) + (3), game.Score);
+    }
+
+    [Fact]
+    public void Rolling_All_Fives()
+    {
+      for(var frame = 1; frame <= 10; frame++){
+          game.Roll(5, 5);
+      }
+      game.Roll(5); // last roll because of last spare
+      Assert.Equal(150, game.Score);
+    }
+
+    [Fact]
+    public void Rolling_Strike_2_3()
+    {
+      game.Roll(10);
+      game.Roll(2, 3);
+      Assert.Equal((10+2+3) + (2+3), game.Score);
+    }
+
+    [Fact]
+    public void Rolling_Perfect_Game()
+    {
+      for(var frame = 1; frame <= 10; frame++){
+          game.Roll(10);
+      }
+      game.Roll(10); // last two rolls because last frame was a strike
+      game.Roll(10);
+      Assert.Equal(300, game.Score);
+    }
   }
 }
