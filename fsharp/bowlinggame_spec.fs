@@ -3,14 +3,12 @@ module BowlingGame =
 
   open Xunit
 
-  let rec score_for(rolls: int list) =
-    rolls.Head + score_for(rolls.Tail)
-
-  let score(rolls: int list) =
+  let rec score rolls =
     match rolls with
-    | Null -> 0
-    | frame::rest
-      -> rolls.Head + score_for(rolls.Tail)
+    | x::y::rest -> x + y + score rest
+    | x::y       -> x + y
+    | [x]        -> x
+    | _          -> 0
 
   type BowlingGameTests() =
     [<Fact>]
@@ -25,10 +23,10 @@ module BowlingGame =
     member x.``rolling 1``() =
         Assert.Equal(1,score [1])
 
-      [<Fact>]
-      member x.``rolling 2``() =
-          Assert.Equal(2,score [2])
+    [<Fact>]
+    member x.``rolling 1 twice``() =
+        Assert.Equal(2,score [1;1])
 
-      [<Fact>]
-      member x.``rolling 1 twice``() =
-          Assert.Equal(2,score [1;1])
+    [<Fact>]
+    member x.``rolling 1, 2, 3``() =
+        Assert.Equal(6,score [1;2;3])
