@@ -1,2 +1,4 @@
-run tests once: sbt test
-run tests continuously: sbt ~test
+Run tests
+*********
+> sbt test
+> [optional] sbt ~test
