@@ -3,7 +3,7 @@ var chai = require('chai');
 var expect = chai.expect; // we are using the "expect" style of Chai
 var BowlingGame = require('./../src/bowling-game');
 
-describe('CartSummary', function() {
+describe('Bowling Game', function() {
   beforeEach(function(){
     game = new BowlingGame();
   });
@@ -38,5 +38,12 @@ describe('CartSummary', function() {
     game.roll(1);
     game.roll(1);
     expect(game.score()).to.equal(2);
+  });
+
+  it('rolling spare-2 scores 14', function() {
+    game.roll(4);
+    game.roll(6);
+    game.roll(2);
+    expect(game.score()).to.equal(14);
   });
 });
