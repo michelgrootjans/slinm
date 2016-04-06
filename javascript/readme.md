@@ -2,7 +2,7 @@ Prepare project:
 > npm install
 
 Run tests:
-> mocha tests --watch
+> mocha tests --watch --growl
 >
 
 Alternative 1:
