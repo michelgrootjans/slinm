@@ -10,7 +10,8 @@ class BowlingGame {
          case Nil => 0
          case roll1::tail if(roll1 == 10) => 10 + first_roll_of(tail) + second_roll_of(tail) + score(frame + 1, tail)
          case roll1::roll2::tail if(roll1 + roll2 == 10) => 10 + first_roll_of(tail) + score(frame + 1, tail)
-         case head::tail => head + score(frame + 1, tail)
+         case roll1::roll2::tail => roll1 + roll2 + score(frame + 1, tail)
+         case roll::tail => roll
         }
      }
    }
