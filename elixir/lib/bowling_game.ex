@@ -1,4 +1,4 @@
-defmodule Bowling do
+defmodule Game do
   def score(rolls), do: score(1, rolls)
 
   #stop calculating frame score after frame 10
