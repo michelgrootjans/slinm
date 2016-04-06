@@ -22,8 +22,19 @@ var BowlingGame = function() {
     return firstRollOf(frame + 1);
   };
 
+  var isStrike = function(frame){
+    return firstRollOf(frame) == 10;
+  };
+
+  var strikeBonusFor = function(frame){
+    if(isStrike(frame+1))
+      return firstRollOf(frame + 1) +  firstRollOf(frame + 2)
+    return   firstRollOf(frame + 1) + secondRollOf(frame + 1);
+  };
+
   var scoreFor = function(frame){
-    if(isSpare(frame)) return 10 + spareBonusFor(frame);
+    if(isStrike(frame)) return 10 + strikeBonusFor(frame);
+    if( isSpare(frame)) return 10 +  spareBonusFor(frame);
     return firstRollOf(frame) + secondRollOf(frame);
   };
 
@@ -31,6 +42,7 @@ var BowlingGame = function() {
 
     roll: function(pins){
       rolls.push(pins);
+      if(pins==10) rolls.push(0);
     },
 
     score: function() {

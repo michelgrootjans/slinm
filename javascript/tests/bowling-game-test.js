@@ -44,6 +44,29 @@ describe('Bowling Game', function() {
     game.roll(4);
     game.roll(6);
     game.roll(2);
-    expect(game.score()).to.equal(14);
+    expect(game.score()).to.equal((4+6+2) + (2));
   });
+
+  it('rolling all 5-es scores 150', function(){
+    for (var i = 0; i < 21; i++) {
+      game.roll(5);
+    }
+    expect(game.score()).to.equal(150);
+  });
+
+  it('rolling strike-2-3 scores 20', function(){
+    game.roll(10);
+    game.roll(2);
+    game.roll(3);
+    expect(game.score()).to.equal((10+2+3) + (2+3));
+  });
+
+  it('rolling strike-strike-2-3 scores 42', function(){
+    game.roll(10);
+    game.roll(10);
+    game.roll(2);
+    game.roll(3);
+    expect(game.score()).to.equal((10+10+2) + (10+2+3) + (2+3));
+  });
+
 });
