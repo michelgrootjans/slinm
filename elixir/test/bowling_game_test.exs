@@ -8,6 +8,10 @@ defmodule ElixirTest do
   test "rolling 2", do: assert BowlingGame.score([2]) == 2
   test "rolling 1 twice", do: assert BowlingGame.score([1,1]) == 2
 
+  test "rolling all 1-es" do
+    assert BowlingGame.score([1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1]) == 20
+  end
+
   test "rolling a sequence" do
     assert BowlingGame.score([1,2,3,4,5]) == (1+2+3+4+5)
   end
