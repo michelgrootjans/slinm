@@ -11,21 +11,21 @@ class BowlingGame {
          case roll1::tail if(roll1 == 10) => 10 + first_roll_of(tail) + second_roll_of(tail) + score(frame + 1, tail)
          case roll1::roll2::tail if(roll1 + roll2 == 10) => 10 + first_roll_of(tail) + score(frame + 1, tail)
          case head::tail => head + score(frame + 1, tail)
-       }
+        }
      }
    }
 
    private def first_roll_of(rolls: List[Int]):Int = {
      rolls match {
        case Nil => 0
-       case first_roll::tail => first_roll
+       case head::tail => head
      }
    }
 
    private def second_roll_of(rolls: List[Int]):Int = {
      rolls match {
        case Nil => 0
-       case first_roll::second_roll::tail => second_roll
+       case head::tail => first_roll_of(tail)
      }
    }
 }
