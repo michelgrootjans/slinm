@@ -3,9 +3,7 @@ import org.scalatest.{FunSuite, BeforeAndAfter}
 class BowlingGameTest extends FunSuite with BeforeAndAfter {
   var game: BowlingGame = _
 
-  before {
-    game = new BowlingGame
-  }
+  before { game = new BowlingGame }
 
   test("a new game scores 0"){
     assert(0 === game.score(List()))
@@ -33,5 +31,17 @@ class BowlingGameTest extends FunSuite with BeforeAndAfter {
 
   test("rolling all 5-es scores 150"){
     assert(150 === game.score(List.fill(21)(5)))
+  }
+
+  test("rolling strike-2-3 scores 20"){
+    assert(10+2+3 + 2+3 === game.score(List(10,2,3)))
+  }
+
+  test("rolling strike-strike-2-3 scores 42"){
+    assert(10+10+2 + 10+2+3 + 2+3 === game.score(List(10,10,2,3)))
+  }
+
+  test("rolling a perfect game scores 300"){
+    assert(300 === game.score(List.fill(12)(10)))
   }
 }
