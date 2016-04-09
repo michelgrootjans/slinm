@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "xunit": "2.1.0",
+    "xunit.runner.dnx": "2.1.0-*",
+    "FSharp.Dnx": { "type": "build", "version": "1.0.0-*"}
+  },
+
+  "commands": {
+    "test": "xunit.runner.dnx"
+  },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": { }
+  },
+
+  "compiler": {
+    "name": "F#",
+    "compilerAssembly": "FSharp.Dnx",
+    "compilerType": "FSharp.Dnx.FSharpProjectCompiler"
+  },
+  "fsharp": {
+    "files": ["bowlinggame.fs", "bowlinggame_spec.fs"]
+  }
+}
