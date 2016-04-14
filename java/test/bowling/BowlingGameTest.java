@@ -14,18 +14,18 @@ public class BowlingGameTest {
     }
 
     @Test
-    public void ANewGameScores0() {
+    public void aNewGameScores0() {
         assertEquals(0, game.getScore());
     }
 
     @Test
-    public void Rolling_0() {
+    public void rolling_0() {
         game.roll(0);
         assertEquals(0, game.getScore());
     }
 
     @Test
-    public void Rolling_GutterGame() {
+    public void rolling_GutterGame() {
         for (int i = 0; i < 20; i++) {
             game.roll(0);
         }
@@ -33,15 +33,24 @@ public class BowlingGameTest {
     }
 
     @Test
-    public void Rolling_1() {
+    public void rolling_1() {
         game.roll(1);
         assertEquals(1, game.getScore());
     }
 
     @Test
-    public void Rolling_1_1() {
+    public void rolling_1_1() {
         game.roll(1);
         game.roll(1);
         assertEquals(2, game.getScore());
     }
+
+    @Test
+    public void rolling_spare_2() {
+        game.roll(4);
+        game.roll(6);
+        game.roll(2);
+        assertEquals(4+6+2 + 2, game.getScore());
+    }
+
 }
