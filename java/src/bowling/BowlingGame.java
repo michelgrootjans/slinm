@@ -8,6 +8,6 @@ public class BowlingGame {
     }
 
     public void roll(int pins) {
-        score = pins;
+        score += pins;
     }
 }
