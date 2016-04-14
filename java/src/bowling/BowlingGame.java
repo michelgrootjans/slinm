@@ -19,10 +19,16 @@ public class BowlingGame {
     }
 
     private int scoreFor(int frame) {
-        if (firstRollOf(frame) + secondRollOf(frame) == 10) {
-            return firstRollOf(frame) + secondRollOf(frame) + firstRollOf(frame+1);
-        }
+        if (isSpare(frame)) return 10 + spareBonusOf(frame);
         return firstRollOf(frame) + secondRollOf(frame);
+    }
+
+    private boolean isSpare(int frame) {
+        return firstRollOf(frame) + secondRollOf(frame) == 10;
+    }
+
+    private Integer spareBonusOf(int frame) {
+        return firstRollOf(frame+1);
     }
 
     private Integer firstRollOf(int frame) {
