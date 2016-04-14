@@ -77,4 +77,12 @@ public class BowlingGameTest {
         game.roll(3);
         assertEquals(10+10+2 + 10+2+3 + 2+3, game.getScore());
     }
+
+    @Test
+    public void rolling_a_perfectGame() {
+        for (int i = 0; i < 12; i++) {
+            game.roll(10);
+        }
+        assertEquals(300, game.getScore());
+    }
 }
