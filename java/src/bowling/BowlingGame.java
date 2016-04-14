@@ -19,6 +19,9 @@ public class BowlingGame {
     }
 
     private int scoreFor(int frame) {
+        if (firstRollOf(frame) + secondRollOf(frame) == 10) {
+            return firstRollOf(frame) + secondRollOf(frame) + firstRollOf(frame+1);
+        }
         return firstRollOf(frame) + secondRollOf(frame);
     }
 
