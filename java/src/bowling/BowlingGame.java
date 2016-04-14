@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BowlingGame {
-    private int score;
     private List<Integer> rolls = new ArrayList<>();
 
     public int getScore() {
+        Integer score = 0;
+        for (int i = 0; i < 20; i++) {
+            score += rolls.get(i);
+        }
         return score;
     }
 
     public void roll(int pins) {
-        if(score == 10) score += pins;
-        score += pins;
         rolls.add(pins);
     }
 }
