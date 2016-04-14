@@ -8,6 +8,7 @@ public class BowlingGame {
 
     public void roll(int pins) {
         rolls.add(pins);
+        if(pins == 10) rolls.add(0);
     }
 
     public int getScore() {
