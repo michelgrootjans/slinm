@@ -1,7 +1,11 @@
 package bowling;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BowlingGame {
     private int score;
+    private List<Integer> rolls = new ArrayList<>();
 
     public int getScore() {
         return score;
