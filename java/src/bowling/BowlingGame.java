@@ -9,7 +9,8 @@ public class BowlingGame {
     public int getScore() {
         Integer score = 0;
         for (int i = 0; i < 20; i++) {
-            score += rolls.get(i);
+            if(i < rolls.size())
+                score += rolls.get(i);
         }
         return score;
     }
