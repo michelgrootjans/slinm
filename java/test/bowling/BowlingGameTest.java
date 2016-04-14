@@ -60,4 +60,12 @@ public class BowlingGameTest {
         }
         assertEquals(150, game.getScore());
     }
+
+    @Test
+    public void rolling_strike_2_3() {
+        game.roll(10);
+        game.roll(2);
+        game.roll(3);
+        assertEquals(10+2+3 + 2+3, game.getScore());
+    }
 }
