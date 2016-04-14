@@ -31,4 +31,10 @@ public class BowlingGameTest {
         }
         assertEquals(0, game.getScore());
     }
+
+    @Test
+    public void Rolling_1() {
+        game.roll(1);
+        assertEquals(1, game.getScore());
+    }
 }
