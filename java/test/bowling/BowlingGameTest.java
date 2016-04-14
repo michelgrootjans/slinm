@@ -53,4 +53,11 @@ public class BowlingGameTest {
         assertEquals(4+6+2 + 2, game.getScore());
     }
 
+    @Test
+    public void rolling_all_5es() {
+        for (int i = 0; i < 21; i++) {
+            game.roll(5);
+        }
+        assertEquals(150, game.getScore());
+    }
 }

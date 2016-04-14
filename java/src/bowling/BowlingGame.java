@@ -12,7 +12,7 @@ public class BowlingGame {
 
     public int getScore() {
         Integer score = 0;
-        for (int frame = 1; frame < 10; frame++) {
+        for (int frame = 1; frame <= 10; frame++) {
             score += scoreFor(frame);
         }
         return score;
