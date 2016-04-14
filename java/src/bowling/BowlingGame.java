@@ -14,5 +14,6 @@ public class BowlingGame {
     public void roll(int pins) {
         if(score == 10) score += pins;
         score += pins;
+        rolls.add(pins);
     }
 }
