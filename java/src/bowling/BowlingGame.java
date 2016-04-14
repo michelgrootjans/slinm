@@ -8,9 +8,8 @@ public class BowlingGame {
 
     public int getScore() {
         Integer score = 0;
-        for (int i = 0; i < 20; i++) {
-            if(i < rolls.size())
-                score += rolls.get(i);
+        for (int frame = 1; frame < 10; frame++) {
+            score += firstRollOf(frame) + secondRollOf(frame);
         }
         return score;
     }
