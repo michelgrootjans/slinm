@@ -13,9 +13,13 @@ public class BowlingGame {
     public int getScore() {
         Integer score = 0;
         for (int frame = 1; frame < 10; frame++) {
-            score += firstRollOf(frame) + secondRollOf(frame);
+            score += scoreFor(frame);
         }
         return score;
+    }
+
+    private int scoreFor(int frame) {
+        return firstRollOf(frame) + secondRollOf(frame);
     }
 
     private Integer firstRollOf(int frame) {
