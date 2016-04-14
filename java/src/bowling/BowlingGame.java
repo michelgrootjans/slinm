@@ -14,6 +14,14 @@ public class BowlingGame {
         return score;
     }
 
+    private Integer firstRollOf(int frame) {
+        return 0;
+    }
+
+    private Integer secondRollOf(int frame) {
+        return 0;
+    }
+
     public void roll(int pins) {
         rolls.add(pins);
     }
