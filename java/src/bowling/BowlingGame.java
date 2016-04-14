@@ -25,7 +25,7 @@ public class BowlingGame {
     }
 
     private boolean isStrike(int frame) {
-        return false;
+        return firstRollOf(frame) == 10;
     }
 
     private Integer strikeBonusOf(int frame) {
