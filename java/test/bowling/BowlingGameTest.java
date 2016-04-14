@@ -23,4 +23,12 @@ public class BowlingGameTest {
         game.roll(0);
         assertEquals(0, game.getScore());
     }
+
+    @Test
+    public void Rolling_GutterGame() {
+        for (int i = 0; i < 20; i++) {
+            game.roll(0);
+        }
+        assertEquals(0, game.getScore());
+    }
 }
