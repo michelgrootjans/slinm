@@ -68,4 +68,13 @@ public class BowlingGameTest {
         game.roll(3);
         assertEquals(10+2+3 + 2+3, game.getScore());
     }
+
+    @Test
+    public void rolling_strike_strike_2_3() {
+        game.roll(10);
+        game.roll(10);
+        game.roll(2);
+        game.roll(3);
+        assertEquals(10+10+2 + 10+2+3 + 2+3, game.getScore());
+    }
 }
