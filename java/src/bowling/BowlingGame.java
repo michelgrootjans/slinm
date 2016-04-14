@@ -19,6 +19,7 @@ public class BowlingGame {
     }
 
     private int scoreFor(int frame) {
+        if (isStrike(frame)) return 10 + strikeBonusOf(frame);
         if (isSpare(frame)) return 10 + spareBonusOf(frame);
         return defaultScoreOf(frame);
     }
