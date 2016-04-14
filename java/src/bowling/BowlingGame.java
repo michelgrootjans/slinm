@@ -29,7 +29,7 @@ public class BowlingGame {
     }
 
     private Integer strikeBonusOf(int frame) {
-        return 0;
+        return firstRollOf(frame+1) + secondRollOf(frame+1);
     }
 
     private boolean isSpare(int frame) {
