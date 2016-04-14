@@ -24,6 +24,14 @@ public class BowlingGame {
         return defaultScoreOf(frame);
     }
 
+    private boolean isStrike(int frame) {
+        return false;
+    }
+
+    private Integer strikeBonusOf(int frame) {
+        return 0;
+    }
+
     private boolean isSpare(int frame) {
         return defaultScoreOf(frame) == 10;
     }
