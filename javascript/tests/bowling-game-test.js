@@ -44,4 +44,14 @@ describe('Bowling Game', function () {
     });
     it('scores 20', function () { expect(game.score()).to.equal(10+2+3 + 2+3); });
   });
+
+  context('rolling strike-strike-2-3', function () {
+    beforeEach(function () {
+      game.roll(10);
+      game.roll(10);
+      game.roll(2);
+      game.roll(3);
+    });
+    it('scores 42', function () { expect(game.score()).to.equal(10+10+2 + 10+2+3 + 2+3); });
+  });
 });
