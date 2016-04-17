@@ -13,4 +13,9 @@ describe('Bowling Game', function () {
         beforeEach(function(){ game.roll(0); });
         it('scores 0', function () { expect(game.score()).to.equal(0); });
     });
+
+    context('rolling 1', function(){
+        beforeEach(function(){ game.roll(1); });
+        it('scores 1', function () { expect(game.score()).to.equal(1); });
+    });
 });
