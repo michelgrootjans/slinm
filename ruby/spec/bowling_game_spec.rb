@@ -21,10 +21,7 @@ describe BowlingGame do
   end
 
   context 'rolling 1 twice' do
-    before do
-      game.roll 1
-      game.roll 1
-    end
+    before { game.roll 1, 1 }
     it{ is_expected.to score 2 }
   end
 
