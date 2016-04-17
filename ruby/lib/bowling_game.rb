@@ -6,6 +6,6 @@ class BowlingGame
   end
 
   def roll pins
-    @score = pins
+    @score += pins
   end
 end
