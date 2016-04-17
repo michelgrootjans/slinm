@@ -30,4 +30,8 @@ defmodule ElixirTest do
     rolls = Enum.take(Stream.cycle([5]), 21)
     assert BowlingGame.score(rolls) == 150
   end
+
+  test "rolling strike-2-3" do
+    assert BowlingGame.score([10,2,3]) == 10+2+3 + 2+3
+  end
 end
