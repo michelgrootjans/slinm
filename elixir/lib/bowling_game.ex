@@ -1,10 +1,6 @@
 defmodule BowlingGame do
-  def score([1]) do
-    1
-  end
-
-  def score([2]) do
-    2
+  def score([roll]) do
+    roll
   end
 
   def score([1,1]) do
