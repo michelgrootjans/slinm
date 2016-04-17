@@ -35,4 +35,13 @@ describe('Bowling Game', function () {
     });
     it('scores 14', function () { expect(game.score()).to.equal(4+6+2 + 2); });
   });
+
+  context('rolling strike-2-3', function () {
+    beforeEach(function () {
+      game.roll(10);
+      game.roll(2);
+      game.roll(3);
+    });
+    it('scores 20', function () { expect(game.score()).to.equal(10+2+3 + 2+3); });
+  });
 });
