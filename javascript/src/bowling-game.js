@@ -1,7 +1,10 @@
 var BowlingGame = function() {
   var rolls = [];
 
-  var roll = function(pins){ rolls.push(pins); };
+  var roll = function(pins){
+    rolls.push(pins);
+    if(pins == 10) rolls.push(0);
+  };
 
   var score = function() {
     var score = 0;
@@ -12,9 +15,17 @@ var BowlingGame = function() {
   };
 
   var scoreFor = function(frame){
-    return isSpare(frame)
-        ? baseScoreFor(frame) + spareBonusFor(frame)
-        : baseScoreFor(frame);
+    if (isStrike(frame)) return baseScoreFor(frame) + strikeBonusFor(frame);
+    if  (isSpare(frame)) return baseScoreFor(frame) +  spareBonusFor(frame);
+    else                 return baseScoreFor(frame);
+  };
+
+  var isStrike = function(frame){
+    return firstRollOf(frame) == 10;
+  };
+
+  var strikeBonusFor = function(frame){
+    return firstRollOf(frame + 1) + secondRollOf(frame + 1);
   };
 
   var isSpare = function(frame){
