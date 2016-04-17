@@ -3,8 +3,8 @@ defmodule BowlingGame do
     roll
   end
 
-  def score([1,1]) do
-    2
+  def score([head|tail]) do
+    head + score(tail)
   end
 
   def score(_rolls) do
