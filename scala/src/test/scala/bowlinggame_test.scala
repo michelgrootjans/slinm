@@ -36,4 +36,8 @@ class BowlingGameTest extends FunSuite with BeforeAndAfter {
   test("rolling strike-strike-2-3"){
     assert(10+10+2 + 10+2+3 + 2+3 === game.score(List(10,10,2,3)))
   }
+
+  test("rolling a perfect game"){
+    assert(300 === game.score(List.fill(12)(10)))
+  }
 }
