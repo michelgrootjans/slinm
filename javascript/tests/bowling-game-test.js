@@ -7,4 +7,9 @@ describe('Bowling Game', function() {
       var game = new BowlingGame();
       expect(game.score()).to.equal(0);
   });
+  it('rolling 0 scores 0', function() {
+      var game = new BowlingGame();
+      game.roll(0);
+      expect(game.score()).to.equal(0);
+  });
 });
