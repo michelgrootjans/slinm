@@ -18,7 +18,7 @@ namespace BowlingGame {
       {
         return Enumerable.Range(1, 10)
                          .Select(frame => ScoreFor(frame))
-                         .Sum();
+                         .Aggregate(0, (total_score, frame_score) => frame_score + total_score);
       }
     }
 
