@@ -5,7 +5,9 @@ class BowlingGame
     @score = 0
   end
 
-  def roll pins
-    @score += pins
+  def roll *rolls
+    rolls.each do |pins|
+      @score += pins
+    end
   end
 end
