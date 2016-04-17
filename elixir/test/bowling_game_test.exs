@@ -9,4 +9,8 @@ defmodule ElixirTest do
   test "rolling 0" do
     assert BowlingGame.score([0]) == 0
   end
+
+  test "rolling 1" do
+    assert BowlingGame.score([1]) == 1
+  end
 end
