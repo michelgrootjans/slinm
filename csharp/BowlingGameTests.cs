@@ -27,5 +27,11 @@ namespace BowlingGame
       }
       Assert.Equal(0, game.Score);
     }
+
+    [Fact]
+    public void Rolling_1(){
+      game.Roll(1);
+      Assert.Equal(1, game.Score);
+    }
   }
 }
