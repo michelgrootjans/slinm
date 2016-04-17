@@ -27,3 +27,8 @@ namespace BowlingGame
     [<Fact>]
     member x.``rolling spare-2``() =
         Assert.Equal(4+6+2 + 2,score [4;6;2])
+
+    [<Fact>]
+    member x.``rolling all fives``() =
+        let rolls = [for n in 1..21 -> 5]
+        Assert.Equal(150,score rolls)
