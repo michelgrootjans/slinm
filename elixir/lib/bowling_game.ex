@@ -1,5 +1,7 @@
 defmodule BowlingGame do
   def score(rolls), do: score(1, rolls)
+
+  defp score(frame, _) when frame > 10, do: 0
   defp score(frame, [roll1,roll2|tail]) when roll1 + roll2 == 10 do
     roll1 + roll2 + first_roll_of(tail) + score(frame+1, tail)
   end
