@@ -17,4 +17,8 @@ defmodule ElixirTest do
   test "rolling 2" do
     assert BowlingGame.score([2]) == 2
   end
+
+    test "rolling 1-1" do
+      assert BowlingGame.score([1,1]) == 2
+    end
 end
