@@ -28,7 +28,8 @@ class BowlingGame
   end
 
   def strike_bonus_for frame
-    first_roll_of(frame + 1) + second_roll_of(frame + 1)
+    return first_roll_of(frame + 1) +  first_roll_of(frame + 2) if (strike?(frame+1))
+    return first_roll_of(frame + 1) + second_roll_of(frame + 1)
   end
 
   def spare? frame
