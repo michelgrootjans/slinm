@@ -15,8 +15,17 @@ class BowlingGame
   end
 
   def score_for frame
+    return 10 + strike_bonus_for(frame) if strike? frame
     return 10 + spare_bonus_for(frame) if spare? frame
     first_roll_of(frame) + second_roll_of(frame)
+  end
+
+  def strike? frame
+    first_roll_of(frame) == 10
+  end
+
+  def strike_bonus_for frame
+    first_roll_of(frame + 1) + second_roll_of(frame + 1)
   end
 
   def spare? frame
