@@ -19,5 +19,13 @@ namespace BowlingGame
       game.Roll(0);
       Assert.Equal(0, game.Score);
     }
+
+    [Fact]
+    public void Rolling_gutter_game(){
+      for (int i=0; i<20; i++) {
+        game.Roll(0);
+      }
+      Assert.Equal(0, game.Score);
+    }
   }
 }
