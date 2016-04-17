@@ -39,4 +39,9 @@ describe BowlingGame do
     it{ is_expected.to score 10+10+2 + 10+2+3 + 2+3 }
   end
 
+  context 'rolling a perfect game' do
+    before { 12.times{ game.roll 10 }}
+    it{ is_expected.to score 300 }
+  end
+
 end
