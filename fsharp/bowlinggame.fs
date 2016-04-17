@@ -8,8 +8,9 @@ module BowlingGame =
 
   let rec score_for frame rolls =
     match rolls with
-      | roll1::roll2::tail when roll1+roll2=10 -> roll1 + roll2 + first_roll_of(tail) + score_for(frame)(tail)
-      | head::tail -> head + score_for(frame)(tail)
+      | _ when frame > 10 -> 0
+      | roll1::roll2::tail when roll1+roll2=10 -> roll1 + roll2 + first_roll_of(tail) + score_for(frame+1)(tail)
+      | head::tail -> head + score_for(frame+1)(tail)
       | _ -> 0
 
   let score rolls =
