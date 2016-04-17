@@ -1,5 +1,4 @@
 require 'bowling_game'
-require 'rspec/its'
 require 'support/score_matcher'
 
 describe BowlingGame do

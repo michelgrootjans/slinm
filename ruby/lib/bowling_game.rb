@@ -1,13 +1,37 @@
 class BowlingGame
-  attr_reader :score
-
+  attr_reader :rolls
   def initialize
-    @score = 0
+    @rolls = []
   end
 
   def roll *rolls
-    rolls.each do |pins|
-      @score += pins
+    rolls.each { |roll| @rolls << roll }
+  end
+
+  def score
+    (1..10).reduce(0) do |score, frame|
+      score + score_for(frame)
     end
+  end
+
+  def score_for frame
+    return 10 + spare_bonus_for(frame) if spare? frame
+    first_roll_of(frame) + second_roll_of(frame)
+  end
+
+  def spare? frame
+    first_roll_of(frame) + second_roll_of(frame) == 10
+  end
+
+  def spare_bonus_for frame
+    first_roll_of(frame + 1)
+  end
+
+  def first_roll_of frame
+    @rolls[(frame-1)*2] || 0
+  end
+
+  def second_roll_of frame
+    @rolls[(frame-1)*2 + 1] || 0
   end
 end
