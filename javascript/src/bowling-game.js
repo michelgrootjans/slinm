@@ -1,6 +1,8 @@
 var BowlingGame = function () {
   var total = 0;
-  this.roll  = function (pins) { total = pins; };
-  this.score = function () { return total; };
+  var roll  = function (pins) { total = pins; };
+  var score = function () { return total; };
+
+  return { roll: roll, score: score };
 };
 module.exports = BowlingGame;
