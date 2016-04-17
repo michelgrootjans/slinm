@@ -7,7 +7,7 @@ describe BowlingGame do
   subject(:game) {BowlingGame.new}
 
   context 'a new game' do
-    it { expect(game.score).to eq 0 }
+    its(:score){ is_expected.to eq 0 }
   end
 
   context 'rolling 0' do
