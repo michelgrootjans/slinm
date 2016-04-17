@@ -34,4 +34,9 @@ describe BowlingGame do
     it{ is_expected.to score 10+2+3 + 2+3 }
   end
 
+  context 'rolling strike-strike-2-3' do
+    before { game.roll 10, 10, 2, 3 }
+    it{ is_expected.to score 10+10+2 + 10+2+3 + 2+3 }
+  end
+
 end
