@@ -25,4 +25,9 @@ describe BowlingGame do
     it{ is_expected.to score 2 }
   end
 
+  context 'rolling spare-2' do
+    before { game.roll 4, 6, 2 }
+    it{ is_expected.to score 4+6+2 + 2 }
+  end
+
 end
