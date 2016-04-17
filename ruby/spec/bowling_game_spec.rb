@@ -20,4 +20,12 @@ describe BowlingGame do
     it{ is_expected.to score 1 }
   end
 
+  context 'rolling 1 twice' do
+    before do
+      game.roll 1
+      game.roll 1
+    end
+    it{ is_expected.to score 2 }
+  end
+
 end
