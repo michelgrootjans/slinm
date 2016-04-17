@@ -11,10 +11,18 @@ var BowlingGame = function () {
     return rolls[index] || 0;
   }
 
+  function firstRollOf(frame) {
+    return rollNumber(((frame - 1) * 2 + 1));
+  }
+
+  function secondRollOf(frame) {
+    return rollNumber(((frame - 1) * 2));
+  }
+
   var score = function () {
     var score = 0;
     for(var frame=1; frame <= 10; frame++) {
-      score += rollNumber(((frame - 1) * 2)) + rollNumber(((frame - 1) * 2 + 1));
+      score += secondRollOf(frame) + firstRollOf(frame);
     }
     return score;
   };
