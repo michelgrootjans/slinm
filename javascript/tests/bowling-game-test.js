@@ -4,6 +4,7 @@ var BowlingGame = require('./../src/bowling-game');
 
 describe('Bowling Game', function() {
   it('a new game scores 0', function() {
-    expect(new BowlingGame().score()).to.equal(0);
+      var game = new BowlingGame();
+      expect(game.score()).to.equal(0);
   });
 });
