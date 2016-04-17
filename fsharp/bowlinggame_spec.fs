@@ -32,3 +32,7 @@ namespace BowlingGame
     member x.``rolling all fives``() =
         let rolls = [for n in 1..21 -> 5]
         Assert.Equal(150,score rolls)
+
+    [<Fact>]
+    member x.``rolling strike-2-3``() =
+        Assert.Equal(10+2+3 + 2+3,score [10;2;3])
