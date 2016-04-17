@@ -10,4 +10,11 @@ describe BowlingGame do
     it { expect(game.score).to eq 0 }
   end
 
+  context 'rolling 0' do
+    it do
+      game.roll(0)
+      expect(game.score).to eq 0
+    end
+  end
+
 end
