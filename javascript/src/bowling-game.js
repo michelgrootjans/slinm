@@ -11,23 +11,23 @@ var BowlingGame = function() {
     return score;
   };
 
-  function baseScoreFor(frame) {
-    return firstRollOf(frame) + secondRollOf(frame);
-  }
-
   var scoreFor = function(frame){
-    if( isSpare(frame))
-      return baseScoreFor(frame) + spareBonusFor(frame);
-    return baseScoreFor(frame);
+    return isSpare(frame)
+        ? baseScoreFor(frame) + spareBonusFor(frame)
+        : baseScoreFor(frame);
   };
 
   var isSpare = function(frame){
-    return firstRollOf(frame) + secondRollOf(frame) == 10;
+    return baseScoreFor(frame) == 10;
   };
 
   var spareBonusFor = function(frame){
     return firstRollOf(frame + 1);
   };
+
+  function baseScoreFor(frame) {
+    return firstRollOf(frame) + secondRollOf(frame);
+  }
 
   var firstRollOf = function(frame){
     return rolls[(frame-1) * 2] || 0;
