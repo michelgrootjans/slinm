@@ -34,4 +34,8 @@ defmodule ElixirTest do
   test "rolling strike-2-3" do
     assert BowlingGame.score([10,2,3]) == 10+2+3 + 2+3
   end
+
+  test "rolling strike-strike-2-3" do
+    assert BowlingGame.score([10,10,2,3]) == 10+10+2 + 10+2+3 + 2+3
+  end
 end
