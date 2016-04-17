@@ -1,5 +1,5 @@
 class BowlingGame
-  def roll(pins)
+  def roll pins
 
   end
 

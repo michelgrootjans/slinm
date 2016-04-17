@@ -11,8 +11,13 @@ describe BowlingGame do
   end
 
   context 'rolling 0' do
-    before{ game.roll(0) }
+    before{ game.roll 0 }
     it{ is_expected.to score 0 }
+  end
+
+  context 'rolling 1' do
+    before{ game.roll 1 }
+    it{ is_expected.to score 1 }
   end
 
 end
