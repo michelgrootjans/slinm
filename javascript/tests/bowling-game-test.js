@@ -54,4 +54,11 @@ describe('Bowling Game', function () {
     });
     it('scores 42', function () { expect(game.score()).to.equal(10+10+2 + 10+2+3 + 2+3); });
   });
+
+  context('rolling a perfect game', function () {
+    beforeEach(function () {
+      for(var i=0; i<12; i++) game.roll(10);
+    });
+    it('scores 300', function () { expect(game.score()).to.equal(300); });
+  });
 });

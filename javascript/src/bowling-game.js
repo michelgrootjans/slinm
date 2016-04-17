@@ -25,7 +25,7 @@ var BowlingGame = function() {
   };
 
   var strikeBonusFor = function(frame){
-    return isStrike(frame + 1) 
+    return isStrike(frame + 1)
         ? firstRollOf(frame + 1) +  firstRollOf(frame + 2)
         : firstRollOf(frame + 1) + secondRollOf(frame + 1);
   };
