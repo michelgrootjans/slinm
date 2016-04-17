@@ -33,5 +33,12 @@ namespace BowlingGame
       game.Roll(1);
       Assert.Equal(1, game.Score);
     }
+
+    [Fact]
+    public void Rolling_1_1(){
+      game.Roll(1);
+      game.Roll(1);
+      Assert.Equal(2, game.Score);
+    }
   }
 }
