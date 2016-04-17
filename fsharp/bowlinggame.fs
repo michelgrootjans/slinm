@@ -3,7 +3,8 @@ module BowlingGame =
 
   let first_roll_of rolls =
     match rolls with
-      | head::tail -> head
+      | head::_tail -> head
+      | _ -> 0
 
   let rec score rolls =
     match rolls with
