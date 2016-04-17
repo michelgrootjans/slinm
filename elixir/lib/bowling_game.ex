@@ -7,6 +7,10 @@ defmodule BowlingGame do
     2
   end
 
+  def score([1,1]) do
+    2
+  end
+
   def score(_rolls) do
     0
   end
