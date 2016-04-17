@@ -16,11 +16,9 @@ namespace BowlingGame {
     public int Score {
       get
       {
-        var score = 0;
-        for (int frame=1; frame<=10; frame++) {
-          score += ScoreFor(frame);
-        }
-        return score;
+        return Enumerable.Range(1, 10)
+                         .Select(frame => ScoreFor(frame))
+                         .Sum();
       }
     }
 
