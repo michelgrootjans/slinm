@@ -2,5 +2,5 @@ namespace BowlingGame
 module BowlingGame =
 
   let rec score rolls =
-    0
-  
+    match rolls with
+      | _ -> 0
