@@ -19,10 +19,14 @@ var BowlingGame = function () {
     return rollNumber(((frame - 1) * 2));
   }
 
+  function scoreFor(frame) {
+    return secondRollOf(frame) + firstRollOf(frame);
+  }
+
   var score = function () {
     var score = 0;
     for(var frame=1; frame <= 10; frame++) {
-      score += secondRollOf(frame) + firstRollOf(frame);
+      score += scoreFor(frame);
     }
     return score;
   };
