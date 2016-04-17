@@ -11,9 +11,10 @@ defmodule BowlingGame do
     10 + first_roll_of(tail) + second_roll_of(tail) + score(frame+1, tail)
   end
 
-  defp score(frame, [head|tail]), do: head + score(frame+1, tail)
+  defp score(frame, [roll1,roll2|tail]), do: roll1 + roll2 + score(frame+1, tail)
+  defp score(_frame, [roll]), do: roll
   defp score(_frame, _rolls), do: 0
 
-  defp  first_roll_of([head|tail]), do: head
-  defp second_roll_of([head|tail]), do: first_roll_of(tail)
+  defp  first_roll_of([head|_tail]), do: head
+  defp second_roll_of([_head|tail]), do: first_roll_of(tail)
 end
