@@ -12,9 +12,7 @@ describe BowlingGame do
 
   context 'rolling 0' do
     before{ game.roll(0) }
-    it 'scores 0' do
-      expect(game.score).to eq 0
-    end
+    its(:score){ is_expected.to eq 0 }
   end
 
 end
