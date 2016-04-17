@@ -5,7 +5,10 @@ class BowlingGame
   end
 
   def roll *rolls
-    rolls.each { |roll| @rolls << roll }
+    rolls.each do |roll|
+      @rolls << roll
+      @rolls << 0 if roll==10
+    end
   end
 
   def score
