@@ -1,7 +1,5 @@
 defmodule BowlingGame do
-  def score([roll]) do
-    roll
-  end
+  def score([roll]), do: roll
 
   def score([head|tail]) do
     head + score(tail)
