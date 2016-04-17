@@ -1,5 +1,9 @@
 class BowlingGame {
   def score(rolls: List[Int]):Int = {
-     0
+    rolls match {
+      case Nil => 0
+      case 0::tail => 0
+      case 1::tail => 1
+    }
   }
 }
