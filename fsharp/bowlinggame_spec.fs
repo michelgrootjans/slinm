@@ -36,3 +36,7 @@ namespace BowlingGame
     [<Fact>]
     member x.``rolling strike-2-3``() =
         Assert.Equal(10+2+3 + 2+3,score [10;2;3])
+
+    [<Fact>]
+    member x.``rolling strike-strike-2-3``() =
+        Assert.Equal(10+10+2 + 10+2+3 + 2+3,score [10;10;2;3])
