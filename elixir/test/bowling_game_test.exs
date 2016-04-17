@@ -5,4 +5,8 @@ defmodule ElixirTest do
   test "a new game" do
     assert BowlingGame.score([]) == 0
   end
+
+  test "rolling 0" do
+    assert BowlingGame.score([0]) == 0
+  end
 end
