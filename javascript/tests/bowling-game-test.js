@@ -18,4 +18,12 @@ describe('Bowling Game', function () {
     beforeEach(function () { game.roll(1); });
     it('scores 1', function () { expect(game.score()).to.equal(1); });
   });
+
+  context('rolling 1 twice', function () {
+    beforeEach(function () {
+      game.roll(1);
+      game.roll(1);
+    });
+    it('scores 2', function () { expect(game.score()).to.equal(2); });
+  });
 });
