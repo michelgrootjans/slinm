@@ -15,3 +15,7 @@ namespace BowlingGame
     [<Fact>]
     member x.``rolling 1``() =
         Assert.Equal(1,score [1])
+
+    [<Fact>]
+    member x.``rolling 2``() =
+        Assert.Equal(2,score [2])
