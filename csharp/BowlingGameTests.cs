@@ -13,5 +13,11 @@ namespace BowlingGame
     public void ANewGameScores0(){
       Assert.Equal(0, game.Score);
     }
+
+    [Fact]
+    public void Rolling_0(){
+      game.Roll(0);
+      Assert.Equal(0, game.Score);
+    }
   }
 }
