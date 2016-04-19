@@ -13,3 +13,7 @@
 (context "rolling gutter game"
   (it "scores 0"
     (should= 0 (score (repeat 0)))))
+
+(context "rolling 1"
+  (it "scores 1"
+    (should= 1 (score 1))))
