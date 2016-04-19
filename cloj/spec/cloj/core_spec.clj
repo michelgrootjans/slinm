@@ -2,6 +2,6 @@
   (:require [speclj.core :refer :all]
             [cloj.bowling :refer :all]))
 
-(describe "a test"
-  (it "FIXME, I fail."
-    (should= 1 1)))
+(context "a new game"
+  (it "scores 0"
+    (should= 0 (score 0))))
