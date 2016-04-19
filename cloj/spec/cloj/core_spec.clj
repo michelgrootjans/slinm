@@ -31,5 +31,9 @@
     (should= (+ 4 6 2 2) (score [6 4 2]))))
 
 (context "rolling all fives"
-  (it "scores 14"
+  (it "scores 150"
     (should= 150 (score (repeat 5)))))
+
+(context "rolling strike-2-3"
+  (it "scores 20"
+    (should= (+ 10 2 3 2 3) (score [10 2 3]))))
