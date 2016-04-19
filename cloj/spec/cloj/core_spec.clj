@@ -29,3 +29,7 @@
 (context "rolling spare-2"
   (it "scores 14"
     (should= (+ 4 6 2 2) (score [6 4 2]))))
+
+(context "rolling all fives"
+  (it "scores 14"
+    (should= 150 (score (repeat 5)))))
