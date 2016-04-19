@@ -18,6 +18,14 @@
   (it "scores 1"
     (should= 1 (score [1]))))
 
+(context "rolling 1-1"
+  (it "scores 1"
+    (should= 2 (score [1 1]))))
+
 (context "rolling all ones"
   (it "scores 20"
     (should= 20 (score (repeat 1)))))
+
+(context "rolling spare-2"
+  (it "scores 14"
+    (should= (+ 4 6 2 2) (score [6 4 2]))))
