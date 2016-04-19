@@ -1,3 +1,4 @@
 (ns cloj.bowling)
 
-(defn score [rolls] 0)
+(defn score [rolls]
+  (reduce + (take 20 rolls)))
