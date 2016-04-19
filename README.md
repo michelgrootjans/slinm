@@ -14,8 +14,9 @@ To move one step back    : `git prev`
 
 To configure these aliases, run these scripts:
 git config --global alias.next '!git checkout `git rev-list HEAD..master | tail -1`'
-git config alias.next '!git checkout `git rev-list HEAD..end-state | tail -1`'
+git config alias.next  '!git checkout . && git checkout `git rev-list HEAD..end-state | tail -1`'
 git config --global alias.prev 'checkout HEAD^'
+
 for moving within a specific branch:
 git config alias.next-j  '!git checkout . && git checkout `git rev-list HEAD..java | tail -1`'
 git config alias.next-c  '!git checkout . && git checkout `git rev-list HEAD..csharp | tail -1`'
