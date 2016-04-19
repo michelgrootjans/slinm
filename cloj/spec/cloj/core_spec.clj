@@ -9,3 +9,7 @@
 (context "rolling 0"
   (it "scores 0"
     (should= 0 (score 0))))
+
+(context "rolling gutter game"
+  (it "scores 0"
+    (should= 0 (score (repeat 0)))))
