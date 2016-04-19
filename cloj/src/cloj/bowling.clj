@@ -7,12 +7,14 @@
   (= 10 (sum (take 2 rolls))))
 
 (defn- rolls-for-frame [rolls]
-  (if (spare? rolls)
+  (if (or (= 10 (first rolls)) (spare? rolls))
     (take 3 rolls)
     (take 2 rolls)))
 
 (defn- rest-rolls [rolls]
-  (drop 2 rolls))
+  (if (= 10 (first rolls))
+    (drop 1 rolls)
+    (drop 2 rolls)))
 
 (defn- to-frames [rolls]
   (lazy-seq (cons (rolls-for-frame rolls)
