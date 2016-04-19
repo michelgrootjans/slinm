@@ -6,8 +6,11 @@
 (defn- spare? [rolls]
   (= 10 (sum (take 2 rolls))))
 
+(defn- strike? [rolls]
+  (= 10 (first rolls)))
+
 (defn- rolls-for-frame [rolls]
-  (if (or (= 10 (first rolls)) (spare? rolls))
+  (if (or (strike? rolls) (spare? rolls))
     (take 3 rolls)
     (take 2 rolls)))
 
