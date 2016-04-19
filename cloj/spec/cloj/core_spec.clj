@@ -36,4 +36,8 @@
 
 (context "rolling strike-2-3"
   (it "scores 20"
-    (should= (+ 10 2 3 2 3) (score [10 2 3]))))
+    (should= (+ 10 2 3   2 3) (score [10 2 3]))))
+
+(context "rolling strike-strike-2-3"
+  (it "scores 20"
+    (should= (+ 10 10 2   10 2 3   2 3) (score [10 10 2 3]))))
